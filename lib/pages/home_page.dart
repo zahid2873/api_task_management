@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'add_task.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -38,7 +40,9 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    MaterialButton(onPressed: (){},
+                    MaterialButton(onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AddTask()));
+                    },
                       height: MediaQuery.of(context).size.height *.08,
                       minWidth: double.infinity,
                       color: Colors.indigo,

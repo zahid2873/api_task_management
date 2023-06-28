@@ -21,7 +21,6 @@ class _AddTaskState extends State<AddTask> {
             height: size.height*0.3,
             width: double.infinity,
             decoration: BoxDecoration(
-
               image: DecorationImage(
                 fit: BoxFit.cover,
                   image: NetworkImage("https://media.istockphoto.com/id/1013355986/photo/close-up-of-calendar-and-clock-on-green-background-planning-for-business-meeting-or-travel.jpg?s=612x612&w=0&k=20&c=ZUyjgj2CjJ-r-6-iEf4pt1VmU1i5aLYAOJfISvlnC_Q=")),

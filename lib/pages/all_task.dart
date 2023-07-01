@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widget/task_widget.dart';
+
 class AllTask extends StatefulWidget {
   const AllTask({Key? key}) : super(key: key);
 
@@ -8,7 +10,8 @@ class AllTask extends StatefulWidget {
 }
 
 class _AllTaskState extends State<AllTask> {
-  
+  final textItem = ["demo1","demo2"];
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -59,7 +62,14 @@ class _AllTaskState extends State<AllTask> {
                 )
               ],
             ),
-          )
+          ),
+          ListView.builder(
+              itemBuilder: (context,index){
+                return TaskWidget(text: textItem[index], color: Colors.indigo);
+              },
+            itemCount: textItem.length,
+          ),
+          //
         ],
       ),
     );

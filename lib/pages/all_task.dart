@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widget/task_widget.dart';
+import '../utils/utils.dart';
 
 class AllTask extends StatefulWidget {
   const AllTask({Key? key}) : super(key: key);
@@ -66,7 +67,18 @@ class _AllTaskState extends State<AllTask> {
             ),
             ListView.builder(
                 itemBuilder: (context,index){
-                  return TaskWidget(text: textItem[index], color: Colors.indigo);
+                  return Dismissible(
+                    background: leftEditingIcon,
+                    secondaryBackground: rightDeleteIcon,
+                    key: ObjectKey(index),
+                      onDismissed: (DismissDirection direction){
+                         print("Dismissed");
+                      },
+                      confirmDismiss: (DismissDirection direction) async{
+                        print("Confimering dismiss");
+                        return true;
+                      },
+                      child: TaskWidget(text: textItem[index], color: Colors.indigo));
                 },
               itemCount: textItem.length,
               shrinkWrap: true,

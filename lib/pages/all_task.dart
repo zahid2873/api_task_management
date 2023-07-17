@@ -76,9 +76,15 @@ class _AllTaskState extends State<AllTask> {
                       },
                       confirmDismiss: (DismissDirection direction) async{
                         print("Confimering dismiss");
-                        return true;
+                        if(direction == DismissDirection.startToEnd){
+                          return false;
+                        }else {
+                          return true;
+                        }
                       },
-                      child: TaskWidget(text: textItem[index], color: Colors.indigo));
+                      child: Container(
+                        margin: EdgeInsets.only(left: 20,right: 20,bottom: 10),
+                          child: TaskWidget(text: textItem[index], color: Colors.indigo)));
                 },
               itemCount: textItem.length,
               shrinkWrap: true,

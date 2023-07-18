@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_management/widget/custome_button.dart';
 
 import '../widget/task_widget.dart';
 import '../utils/utils.dart';
@@ -77,9 +78,38 @@ class _AllTaskState extends State<AllTask> {
                       confirmDismiss: (DismissDirection direction) async{
                         print("Confimering dismiss");
                         if(direction == DismissDirection.startToEnd){
+                          showModalBottomSheet(
+                              backgroundColor: Colors.black.withOpacity(.3),
+                              barrierColor: Colors.transparent,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(topRight: Radius.circular(25), topLeft: Radius.circular(25)),
+                              ),
+                              context: context, 
+                              builder: (BuildContext context){
+                                return Container(
+                                  height: size.height*.5,
+                                  width: double.infinity,
+                                  alignment: Alignment.center,
+
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        ButtonWidget(ContainerColor: Colors.indigo, text: "View", txtColor: Colors.white),
+                                        SizedBox(
+                                          height: size.height*.02,
+                                        ),
+                                        ButtonWidget(ContainerColor: Colors.indigo, text: "Edit", txtColor: Colors.blueAccent),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              }
+                          );
                           return false;
                         }else {
-                          return true;
+                          return Future.delayed(Duration(seconds: 2),()=>direction==DismissDirection.startToEnd);
                         }
                       },
                       child: Container(

@@ -13,3 +13,4 @@ final rightDeleteIcon = Container(
   child: IconButton(onPressed: (){}, icon: Icon(Icons.delete),color: Colors.white,),
   alignment: Alignment.centerRight,
 );
+

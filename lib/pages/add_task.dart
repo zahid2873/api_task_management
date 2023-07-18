@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_management/widget/custome_button.dart';
 
 class AddTask extends StatefulWidget {
   const AddTask({Key? key}) : super(key: key);
@@ -60,17 +61,11 @@ class _AddTaskState extends State<AddTask> {
           ),
           Padding(
               padding: EdgeInsets.all(20),
-              child:  MaterialButton(onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>AddTask()));
-              },
-                height: MediaQuery.of(context).size.height *.08,
-                minWidth: double.infinity,
-                color: Colors.indigo,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: Text("Add"),
-              ),
+              child: GestureDetector(
+                onTap: (){
+                  
+                },
+                  child: ButtonWidget(ContainerColor: Colors.indigo, text: "Add", txtColor: Colors.black))
           )
 
 

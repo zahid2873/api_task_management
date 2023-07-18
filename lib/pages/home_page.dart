@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_management/widget/custome_button.dart';
 
 import 'add_task.dart';
 import 'all_task.dart';
@@ -41,29 +42,39 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    MaterialButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AddTask()));
-                    },
-                      height: MediaQuery.of(context).size.height *.08,
-                      minWidth: double.infinity,
-                      color: Colors.indigo,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: Text("Add Task"),
-                    ),
+                    // MaterialButton(onPressed: (){
+                    //   Navigator.push(context, MaterialPageRoute(builder: (context)=>AddTask()));
+                    // },
+                    //   height: MediaQuery.of(context).size.height *.08,
+                    //   minWidth: double.infinity,
+                    //   color: Colors.indigo,
+                    //   shape: RoundedRectangleBorder(
+                    //     borderRadius: BorderRadius.circular(25),
+                    //   ),
+                    //   child: Text("Add Task"),
+                    // ),
+                    GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>AddTask()));
+                        },
+                        child: ButtonWidget(ContainerColor: Colors.indigo, text: "Add Task", txtColor: Colors.black,)),
                     SizedBox(height: MediaQuery.of(context).size.height*0.05),
-                    MaterialButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AllTask()));
-                    },
-                      height: MediaQuery.of(context).size.height *.08,
-                      minWidth: double.infinity,
-                      color: Colors.white70,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: Text("View All"),
-                    )
+                    // MaterialButton(onPressed: (){
+                    //   Navigator.push(context, MaterialPageRoute(builder: (context)=>AllTask()));
+                    // },
+                    //   height: MediaQuery.of(context).size.height *.08,
+                    //   minWidth: double.infinity,
+                    //   color: Colors.white70,
+                    //   shape: RoundedRectangleBorder(
+                    //     borderRadius: BorderRadius.circular(25),
+                    //   ),
+                    //   child: Text("View All"),
+                    // )
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>AllTask()));
+                      },
+                        child: ButtonWidget(ContainerColor: Colors.white70, text: "View all", txtColor: Colors.black,))
                   ],
                 )
               ],

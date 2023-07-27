@@ -23,6 +23,7 @@ class _AllTaskState extends State<AllTask> {
           children: [
             Container(
               alignment: Alignment.topLeft,
+              padding: EdgeInsets.only(top: 24),
               height: size.height*0.3,
               width: double.infinity,
               decoration: BoxDecoration(

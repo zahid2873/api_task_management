@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:task_management/widget/custome_button.dart';
 
 import 'add_task.dart';
@@ -55,7 +56,8 @@ class _HomePageState extends State<HomePage> {
                     // ),
                     GestureDetector(
                         onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>AddTask()));
+                          Get.to(()=>AddTask(),transition: Transition.fade,duration: Duration(seconds: 1));
+                          //Navigator.push(context, MaterialPageRoute(builder: (context)=>AddTask()));
                         },
                         child: ButtonWidget(ContainerColor: Colors.indigo, text: "Add Task", txtColor: Colors.black,)),
                     SizedBox(height: MediaQuery.of(context).size.height*0.05),
@@ -72,7 +74,8 @@ class _HomePageState extends State<HomePage> {
                     // )
                     GestureDetector(
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>AllTask()));
+                        Get.to(()=>AllTask(),transition: Transition.fade,duration: Duration(seconds: 1));
+                        //Navigator.push(context, MaterialPageRoute(builder: (context)=>AllTask()));
                       },
                         child: ButtonWidget(ContainerColor: Colors.white70, text: "View all", txtColor: Colors.black,))
                   ],
